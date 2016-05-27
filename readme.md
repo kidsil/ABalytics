@@ -44,6 +44,26 @@ Usage
 
 // Send pageview tracking call
 ```
+### 2.5. You can also add CSS Classes to the elements (thus allowing custom CSS & JS)
+```javascript
+// Initialize with custom classes
+
+      ABalytics.init({
+              experiment1_name: [
+                {
+                  name: 'variant1_name',
+                  "experiment1_class1_name": {
+                    content: "<strong>Html content for variant 1 class 1</strong>",
+                    class: "experiment1_variant1"
+                  }
+                  "experiment1_class2_name": "Html content for variant 1 class 2" //No class changes, can leave value as a string
+                }
+              ],
+              experiment2_name: [ ...
+            });
+
+// Send pageview tracking call
+```
 ### 3. Apply the experiment classes to your html content
 ```html
 <div class="experiment1_class1_name">

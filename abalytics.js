@@ -2,8 +2,9 @@
 //
 // The MIT License (MIT)
 // Copyright (c) 2012 Daniele Mazzini - https://github.com/danmaz74
+// Improvements 2016 Asaf Zamir - https://github.com/kidsil
 //
-// Version: 1.1
+// Version: 1.1.1
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy,
@@ -129,7 +130,13 @@ var ABalytics = (function (window, document, undefined) {
                     change[0]) : getElementsByClassName(change[0]);
 
                 for (j = 0; j < elements.length; j++) {
-                    elements[j].innerHTML = change[1];
+                    //allowing objects to add additional CSS classes
+                    if (typeof change[1]['css'] !== 'undefined' && typeof change[1]['content'] !== 'undefined') {
+                        elements[j].className += ' ' + change[1]['css']
+                        elements[j].innerHTML = change[1]['content'];
+                    } else {
+                        elements[j].innerHTML = change[1];
+                    }
                 }
             }
         }
