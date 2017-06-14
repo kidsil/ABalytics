@@ -131,9 +131,11 @@ var ABalytics = (function (window, document, undefined) {
 
                 for (j = 0; j < elements.length; j++) {
                     //allowing objects to add additional CSS classes
-                    if (typeof change[1]['css'] !== 'undefined' && typeof change[1]['content'] !== 'undefined') {
-                        elements[j].className += ' ' + change[1]['css']
-                        elements[j].innerHTML = change[1]['content'];
+                    if (typeof change[1]['css'] !== 'undefined') {
+                        elements[j].className += ' ' + change[1]['css'];
+                        if (typeof change[1]['content'] !== 'undefined') {
+                            elements[j].innerHTML = change[1]['content'];
+                        }
                     } else {
                         elements[j].innerHTML = change[1];
                     }
