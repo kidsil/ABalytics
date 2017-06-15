@@ -64,8 +64,8 @@ Usage
 
 // Send pageview tracking call
 
-Note that if "content" is not defined, only CSS classes will be changed (very useful for large HTML elements)
 ```
+Note that if "content" is not defined, only CSS classes will be changed (very useful for large HTML elements)
 ### 3. Apply the experiment classes to your html content
 ```html
 <div class="experiment1_class1_name">
